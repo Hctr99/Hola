@@ -2,8 +2,8 @@ package com.company;
 import java.util.Scanner;
 public class Main {
     public static Scanner t=new Scanner(System.in);
-    public static double num1,num2, suma, resta1,resta2,multiplicacion;
-    public static double division1, division2;
+    public static double num1,num2, suma, resta1,multiplicacion;
+    public static double division1;
     public static void main(String[] args) {
         menu();
     }
@@ -41,10 +41,10 @@ public class Main {
                 break;
             case 100:
                 System.out.println("Elección mal ingresadas");
-                menu();
                 break;
             default:
                 System.out.println("Elección incorrecta");
+                menu();
         }
     }
     public static void suma(){
@@ -61,9 +61,7 @@ public class Main {
         System.out.println("Ingrese el segundo número a restar");
         num2 = t.nextInt();
         resta1=num1-num2;
-        resta2=num2-num1;
         System.out.println("La primera resta es de: "+resta1);
-        System.out.println("La segunda resta es de: "+resta2);
     }
     public static void multiplicacion(){
         System.out.println("Ingrese el primer número a multiplicar");
@@ -78,16 +76,12 @@ public class Main {
         num1 = t.nextInt();
         System.out.println("Ingrese el segundo número a sumar");
         num2 = t.nextInt();
-        if(num1!=0 && num2!=0) {
+        if(num2!=0) {
             division1=num1/num2;
-            division2=num2/num1;
-        }else if(num1!=0 && num2==0){
-            division();
-        }else if(num2!=0 && num1==0){
-            division();
         }else{
+            System.out.println("Se indefine");
             division();
         }
-        System.out.println("La suma total es de: "+division1+" y "+division2);
+        System.out.println("La división es de: "+division1);
     }
 }
