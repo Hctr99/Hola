@@ -1,0 +1,93 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+    public static Scanner t=new Scanner(System.in);
+    public static double num1,num2, suma, resta1,resta2,multiplicacion;
+    public static double division1, division2;
+    public static void main(String[] args) {
+        menu();
+    }
+    public static void menu(){
+        System.out.println("Ingrese una opción");
+        int eleccion;
+        System.out.println("[1] Suma");
+        System.out.println("[2] Resta");
+        System.out.println("[3] Multiplicación");
+        System.out.println("[4] División");
+        System.out.println("[0] Finalizar");
+        try{
+            eleccion=t.nextInt();
+        }catch(Exception e){
+            eleccion = 100;
+        }
+        switch(eleccion) {
+            case 0:
+                break;
+            case 1:
+                suma();
+                menu();
+                break;
+            case 2:
+                resta();
+                menu();
+                break;
+            case 3:
+                multiplicacion();
+                menu();
+                break;
+            case 4:
+                division();
+                menu();
+                break;
+            case 100:
+                System.out.println("Elección mal ingresadas");
+                menu();
+                break;
+            default:
+                System.out.println("Elección incorrecta");
+        }
+    }
+    public static void suma(){
+        System.out.println("Ingrese el primer número a sumar");
+        num1 = t.nextInt();
+        System.out.println("Ingrese el segundo número a sumar");
+        num2 = t.nextInt();
+        suma=num1+num2;
+        System.out.println("La suma total es de: "+suma);
+    }
+    public static void resta(){
+        System.out.println("Ingrese el primer número a restar");
+        num1 = t.nextInt();
+        System.out.println("Ingrese el segundo número a restar");
+        num2 = t.nextInt();
+        resta1=num1-num2;
+        resta2=num2-num1;
+        System.out.println("La primera resta es de: "+resta1);
+        System.out.println("La segunda resta es de: "+resta2);
+    }
+    public static void multiplicacion(){
+        System.out.println("Ingrese el primer número a multiplicar");
+        num1 = t.nextInt();
+        System.out.println("Ingrese el segundo número a multiplicar");
+        num2 = t.nextInt();
+        multiplicacion=num1*num2;
+        System.out.println("La multiplicación total es de: "+multiplicacion);
+    }
+    public static void division(){
+        System.out.println("Ingrese el primer número a sumar");
+        num1 = t.nextInt();
+        System.out.println("Ingrese el segundo número a sumar");
+        num2 = t.nextInt();
+        if(num1!=0 && num2!=0) {
+            division1=num1/num2;
+            division2=num2/num1;
+        }else if(num1!=0 && num2==0){
+            division();
+        }else if(num2!=0 && num1==0){
+            division();
+        }else{
+            division();
+        }
+        System.out.println("La suma total es de: "+division1+" y "+division2);
+    }
+}
